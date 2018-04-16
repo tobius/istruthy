@@ -4,7 +4,8 @@
 Determine if a given value is "truthy"
 
 > I've done this so many times to work with environment variable configurations that are out of my control I thought it was time to add a little `yarn add istruthy` to my life. Enjoy!
-> <cite>[Tobius](http://tobius.co)</cite>
+>
+> <cite>&mdash;[Tobius](http://tobius.co)</cite>
 
 __Test__
 
