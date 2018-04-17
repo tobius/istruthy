@@ -1,11 +1,7 @@
 
 # isTruthy
 
-Determine if a given value is "truthy"
-
-> I've done this so many times to work with environment variable configurations that are out of my control I thought it was time to add a little `yarn add istruthy` to my life. Enjoy!
->
-> <cite>&mdash;[Tobius](http://tobius.co)</cite>
+JavaScript function used to determine if a given value is "truthy" (useful for env vars).
 
 __Test__
 
@@ -20,4 +16,21 @@ __Use__
 const isTruthy = require('isTruthy');
 console.log(isTruthy(somethingTruthy) ? 'true' : 'false');
 ```
+
+Supported truths are:
+
+```
+true
+'true'
+1
+'1'
+1.0
+'1.0'
+'on'
+'active'
+```
+
+__License__
+
+MIT
 

@@ -1,7 +1,4 @@
 
-// import
-const _ = require('lodash');
-
 /**
  * determine if value is truthy
  *
@@ -9,9 +6,12 @@ const _ = require('lodash');
  * @return {Boolean}
  */
 function isTruthy(value) {
-	value = _.isNull(value) || _.isUndefined(value) ? '' : value;
-	value = value.toString().toLowerCase().trim();
-	return /^(1|active|on|true|truth)$/.test(value);
+	value = `${value}`.toLowerCase().trim();
+	if (/^[0-9\.]+$/.test(value)) {
+		value = parseFloat(value);
+		value = `${value}`.trim();
+	}
+	return /^(1|true|on|active)$/.test(value);
 }
 
 // export
