@@ -1,6 +1,6 @@
 {
-  "name": "istruthy",
-  "version": "0.1.0",
+  "name": "@tobius/istruthy",
+  "version": "0.1.1",
   "description": "Determine if a value is \"truthy\"",
   "main": "index.js",
   "repository": "git@github.com:tobius/istruthy.git",
