@@ -5,13 +5,13 @@ JavaScript function used to determine if a given value is "truthy" (useful for t
 
 Install
 
-```
+```sh
 [~] yarn add @tobius/istruthy
 ```
 
 Usage
 
-```
+```js
 const isTruthy = require('isTruthy');
 
 [true, 'true', 'True', 1, '1', 1.0, '1.0', 'on', 'active'].forEach((truth) => {
