@@ -1,36 +1,29 @@
 
 # isTruthy
 
-JavaScript function used to determine if a given value is "truthy" (useful for env vars).
+JavaScript function used to determine if a given value is "truthy" (useful for testing env vars).
 
-__Test__
+Install
 
 ```
-[~] yarn && yarn test
-[~] vi test/index.js
+[~] yarn add @tobius/istruthy
 ```
 
-__Use__
+Usage
 
 ```
 const isTruthy = require('isTruthy');
-console.log(isTruthy(somethingTruthy) ? 'true' : 'false');
-```
 
-Supported truths are:
+[true, 'true', 'True', 1, '1', 1.0, '1.0', 'on', 'active'].forEach((truth) => {
+	console.log(truth); // true
+});
 
-```
-true
-'true'
-1
-'1'
-1.0
-'1.0'
-'on'
-'active'
+[false, 'hello', 0, 1.1, -1, 'Will you marry me?'].forEach((false) => {
+	console.log(truth); // false
+});
 ```
 
 __License__
 
-MIT
+[MIT](https://github.com/tobius/istruthy/blob/master/LICENSE)
 
