@@ -15,11 +15,11 @@ Usage
 const isTruthy = require('isTruthy');
 
 [true, 'true', 'True', 1, '1', 1.0, '1.0', 'on', 'active'].forEach((truth) => {
-	console.log(truth); // true
+	console.log(isTruthy(truth)); // true
 });
 
-[false, 'hello', 0, 1.1, -1, 'Will you marry me?'].forEach((false) => {
-	console.log(truth); // false
+[false, 'hello', 0, 1.1, -1, 'Will you marry me?'].forEach((truth) => {
+	console.log(isTruthy(truth)); // false
 });
 ```
 
