@@ -1,9 +1,14 @@
 {
   "name": "@tobius/istruthy",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Determine if a given value is \"truthy\"",
   "main": "index.js",
   "repository": "git@github.com:tobius/istruthy.git",
+  "keywords": [
+    "boolean",
+    "isTruthy",
+    "truthy"
+  ],
   "scripts": {
     "eslint": "./node_modules/eslint/bin/eslint.js . --ext .js --max-warnings=0",
     "mocha": "./node_modules/.bin/mocha --recursive -R spec --full-trace",
