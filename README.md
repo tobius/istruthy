@@ -1,15 +1,15 @@
 
 # isTruthy
 
-JavaScript function used to determine if a given value is "truthy" (useful for testing env vars).
+Determine if a given value is "truthy".
 
-Install
+### Setup
 
 ```sh
-[~] yarn add @tobius/istruthy
+[~] npm i @tobius/istruthy
 ```
 
-Usage
+### Usage
 
 ```js
 const isTruthy = require('isTruthy');
