@@ -1,19 +1,16 @@
-
 /**
- * determine if value is truthy
- *
+ * Determine if value is truthy
  * @param {Mixed} value
  * @return {Boolean}
  */
 function isTruthy(value) {
-	value = `${value}`.toLowerCase().trim();
-	if (/^[0-9\.]+$/.test(value)) {
-		value = parseFloat(value);
-		value = `${value}`.trim();
-	}
-	return /^(1|true|on|active)$/.test(value);
+  let normalized = `${value}`.toLowerCase().trim();
+  if (/^[0-9.]+$/.test(normalized)) {
+    normalized = parseFloat(normalized);
+    normalized = `${normalized}`.trim();
+  }
+  return /^(1|true|on|active)$/.test(normalized);
 }
 
 // export
 module.exports = isTruthy;
-

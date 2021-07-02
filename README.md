@@ -25,5 +25,5 @@ const isTruthy = require('isTruthy');
 
 __License__
 
-[MIT](https://github.com/tobius/istruthy/blob/master/LICENSE)
+[MIT](https://mit-license.org/)
 

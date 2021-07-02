@@ -1,6 +1,6 @@
 {
   "name": "@tobius/istruthy",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Determine if a given value is \"truthy\"",
   "main": "index.js",
   "repository": "git@github.com:tobius/istruthy.git",
@@ -10,17 +10,18 @@
     "truthy"
   ],
   "scripts": {
-    "eslint": "./node_modules/eslint/bin/eslint.js . --ext .js --max-warnings=0",
-    "mocha": "./node_modules/.bin/mocha --recursive -R spec --full-trace",
-    "test": "./node_modules/nodemon/bin/nodemon.js --exec 'yarn eslint & yarn mocha'"
+    "lint": "npx eslint . --ext js",
+    "test": "npx mocha -R spec --full-trace",
+    "dev": "npx nodemon --exec 'npm run lint & npm run test'"
   },
-  "author": "Toby Miller <tobius@tobius.co>",
+  "author": "Toby Miller <toby.miller@tobius.com>",
   "license": "MIT",
   "devDependencies": {
     "chai": "^4.1.2",
-    "eslint": "^4.19.1",
-    "mocha": "^5.1.0",
-    "nodemon": "^1.17.3"
-  },
-  "dependencies": {}
+    "eslint": "^7.29.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.23.4",
+    "mocha": "^9.0.1",
+    "nodemon": "^2.0.9"
+  }
 }
