@@ -1,5 +1,4 @@
-.env
+*.swp
+.DS_Store
 node_modules
-tmp
-*.log
-
+npm-debug.log
