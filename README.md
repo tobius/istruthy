@@ -1,29 +1,67 @@
 # isTruthy
 
-Determine if a given value is "truthy".
+Determine if a given value is "truthy" (likely to represent boolean true).
 
-## Install
+### Install
 
 ```sh
 [~] npm i @tobius/istruthy
 ```
 
-## Usage
+_Supported by [Node.js](https://nodejs.org/) version 4, 6, 8, 10, 12, 14, and 16._
+
+### Usage
 
 ```js
 const isTruthy = require('isTruthy');
 
-[true, 'true', 'True', 1, '1', 1.0, '1.0', 'on', 'active'].forEach((truth) => {
-	console.log(isTruthy(truth)); // true
-});
+// true
+console.log([
+	isTruthy('1'),
+	isTruthy('1.0'),
+	isTruthy('active'),
+	isTruthy('on'),
+	isTruthy('true'),
+	isTruthy(1),
+	isTruthy(1.0),
+	isTruthy(true),
+]);
 
-[false, 'hello', 0, 1.1, -1, 'Will you marry me?'].forEach((truth) => {
-	console.log(isTruthy(truth)); // false
-});
+// false
+console.log([
+	isTruthy('-1'),
+	isTruthy('-1.5'),
+	isTruthy('-100'),
+	isTruthy('-100.5'),
+	isTruthy('0'),
+	isTruthy('0.0'),
+	isTruthy('1.5'),
+	isTruthy('100'),
+	isTruthy('100.5'),
+	isTruthy('Infinity'),
+	isTruthy('NaN'),
+	isTruthy('false'),
+	isTruthy('inactive'),
+	isTruthy('null'),
+	isTruthy('off'),
+	isTruthy('undefined'),
+	isTruthy(-1),
+	isTruthy(-1.5),
+	isTruthy(-100),
+	isTruthy(-100.5),
+	isTruthy(0),
+	isTruthy(0.0),
+	isTruthy(1.5),
+	isTruthy(100),
+	isTruthy(100.5),
+	isTruthy(Infinity),
+	isTruthy(NaN),
+	isTruthy(false),
+	isTruthy(null),
+	isTruthy(undefined),
+]);
 ```
 
-_Note: See unit test (`npm run test`) for all use cases._
-
-## License
+### License
 
 This software library is licensed under the [MIT License](https://github.com/tobius/istruthy/blob/master/LICENSE).
