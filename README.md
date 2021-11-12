@@ -1,15 +1,14 @@
-
 # isTruthy
 
 Determine if a given value is "truthy".
 
-### Setup
+## Install
 
 ```sh
 [~] npm i @tobius/istruthy
 ```
 
-### Usage
+## Usage
 
 ```js
 const isTruthy = require('isTruthy');
@@ -23,7 +22,8 @@ const isTruthy = require('isTruthy');
 });
 ```
 
-__License__
+_Note: See unit test (`npm run test`) for all use cases._
 
-[MIT](https://mit-license.org/)
+## License
 
+This software library is licensed under the [MIT License](https://github.com/tobius/istruthy/blob/master/LICENSE).
