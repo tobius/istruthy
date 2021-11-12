@@ -1,75 +1,143 @@
 // import
-const chai = require('chai');
+const assert = require('assert');
 const isTruthy = require('../index');
 
-// enable stack traces
-chai.config.includeStack = true;
+// config
+const check = '\u2714';
+const green = '\x1b[32m';
+const grey = '\x1b[39m';
+const indent = '  ';
+const red = '\x1b[31m';
+const reset = '\x1b[0m';
+const white = '\x1b[37m';
+const x = '\u2718';
 
-// use chai assert
-const { assert } = chai;
+// score
+let pass = 0;
+let fail = 0;
 
 // test
-describe('isTruthy', () => {
+console.log(`\n${indent}${white}isTruthy`);
 
-  it('should understand booleans', () => {
-    assert.ok(isTruthy(true));
-    assert.ok(isTruthy('true'));
-    assert.notOk(isTruthy(false));
-    assert.notOk(isTruthy('false'));
-  });
+try {
+  assert.strictEqual(true, isTruthy(true));
+  assert.strictEqual(true, isTruthy('true'));
+  assert.strictEqual(false, isTruthy(false));
+  assert.strictEqual(false, isTruthy('false'));
+  console.log(`${indent}${indent}${green}${check} ${grey}should understand booleans`);
+  pass++;
+} catch(err) {
+  console.log(`${indent}${indent}${red}${x} ${grey}should understand booleans`);
+  console.error(err);
+  fail++;
+}
 
-  it('should understand integers', () => {
-    assert.notOk(isTruthy(-100));
-    assert.notOk(isTruthy('-100'));
-    assert.notOk(isTruthy(-1));
-    assert.notOk(isTruthy('-1'));
-    assert.notOk(isTruthy(0));
-    assert.notOk(isTruthy('0'));
-    assert.ok(isTruthy(1));
-    assert.ok(isTruthy('1'));
-    assert.notOk(isTruthy(100));
-    assert.notOk(isTruthy('100'));
-  });
+try {
+  assert.strictEqual(false, isTruthy(-100));
+  assert.strictEqual(false, isTruthy('-100'));
+  assert.strictEqual(false, isTruthy(-1));
+  assert.strictEqual(false, isTruthy('-1'));
+  assert.strictEqual(false, isTruthy(0));
+  assert.strictEqual(false, isTruthy('0'));
+  assert.strictEqual(true, isTruthy(1));
+  assert.strictEqual(true, isTruthy('1'));
+  assert.strictEqual(false, isTruthy(100));
+  assert.strictEqual(false, isTruthy('100'));
+  console.log(`${indent}${indent}${green}${check} ${grey}should understand integers`);
+  pass++;
+} catch(err) {
+  console.log(`${indent}${indent}${red}${x} ${grey}should understand integers`);
+  console.error(err);
+  fail++;
+}
 
-  it('should understand floats', () => {
-    assert.notOk(isTruthy(-100.5));
-    assert.notOk(isTruthy('-100.5'));
-    assert.notOk(isTruthy(-1.5));
-    assert.notOk(isTruthy('-1.5'));
-    assert.notOk(isTruthy(0.0));
-    assert.notOk(isTruthy('0.0'));
-    assert.ok(isTruthy(1.0));
-    assert.ok(isTruthy('1.0'));
-    assert.notOk(isTruthy(1.5));
-    assert.notOk(isTruthy('1.5'));
-    assert.notOk(isTruthy(100.5));
-    assert.notOk(isTruthy('100.5'));
-  });
+try {
+  assert.strictEqual(false, isTruthy(-100.5));
+  assert.strictEqual(false, isTruthy('-100.5'));
+  assert.strictEqual(false, isTruthy(-1.5));
+  assert.strictEqual(false, isTruthy('-1.5'));
+  assert.strictEqual(false, isTruthy(0.0));
+  assert.strictEqual(false, isTruthy('0.0'));
+  assert.strictEqual(true, isTruthy(1.0));
+  assert.strictEqual(true, isTruthy('1.0'));
+  assert.strictEqual(false, isTruthy(1.5));
+  assert.strictEqual(false, isTruthy('1.5'));
+  assert.strictEqual(false, isTruthy(100.5));
+  assert.strictEqual(false, isTruthy('100.5'));
+  console.log(`${indent}${indent}${green}${check} ${grey}should understand floats`);
+  pass++;
+} catch(err) {
+  console.log(`${indent}${indent}${red}${x} ${grey}should understand floats`);
+  console.error(err);
+  fail++;
+}
 
-  it('should understand null', () => {
-    assert.notOk(isTruthy(null));
-    assert.notOk(isTruthy('null'));
-  });
+try {
+  assert.strictEqual(false, isTruthy(null));
+  assert.strictEqual(false, isTruthy('null'));
+  console.log(`${indent}${indent}${green}${check} ${grey}should understand null`);
+  pass++;
+} catch(err) {
+  console.log(`${indent}${indent}${red}${x} ${grey}should understand null`);
+  console.error(err);
+  fail++;
+}
 
-  it('should understand undefined', () => {
-    assert.notOk(isTruthy(undefined));
-    assert.notOk(isTruthy('undefined'));
-  });
+try {
+  assert.strictEqual(false, isTruthy(undefined));
+  assert.strictEqual(false, isTruthy('undefined'));
+  console.log(`${indent}${indent}${green}${check} ${grey}should understand undefined`);
+  pass++;
+} catch(err) {
+  console.log(`${indent}${indent}${red}${x} ${grey}should understand undefined`);
+  console.error(err);
+  fail++;
+}
 
-  it('should understand NaN', () => {
-    assert.notOk(isTruthy(NaN));
-    assert.notOk(isTruthy('NaN'));
-  });
+try {
+  assert.strictEqual(false, isTruthy(NaN));
+  assert.strictEqual(false, isTruthy('NaN'));
+  console.log(`${indent}${indent}${green}${check} ${grey}should understand NaN`);
+  pass++;
+} catch(err) {
+  console.log(`${indent}${indent}${red}${x} ${grey}should understand NaN`);
+  console.error(err);
+  fail++;
+}
 
-  it('should understand Infinity', () => {
-    assert.notOk(isTruthy(Infinity));
-    assert.notOk(isTruthy('Infinity'));
-  });
+try {
+  assert.strictEqual(false, isTruthy(Infinity));
+  assert.strictEqual(false, isTruthy('Infinity'));
+  console.log(`${indent}${indent}${green}${check} ${grey}should understand Infinity`);
+  pass++;
+} catch(err) {
+  console.log(`${indent}${indent}${red}${x} ${grey}should understand Infinity`);
+  console.error(err);
+  fail++;
+}
 
-  it('should understand "human truthy" strings', () => {
-    assert.ok(isTruthy('on'));
-    assert.ok(isTruthy('active'));
-    assert.notOk(isTruthy('off'));
-    assert.notOk(isTruthy('inactive'));
-  });
-});
+try {
+  assert.strictEqual(true, isTruthy('on'));
+  assert.strictEqual(true, isTruthy('active'));
+  assert.strictEqual(false, isTruthy('off'));
+  assert.strictEqual(false, isTruthy('inactive'));
+  console.log(`${indent}${indent}${green}${check} ${grey}should understand "human truthy" strings`);
+  pass++;
+} catch(err) {
+  console.log(`${indent}${indent}${red}${x} ${grey}should understand "human truthy" strings`);
+  console.error(err);
+  fail++;
+}
+
+// summary
+console.log('');
+if (pass > 0) {
+  console.log(`${indent}${green}${pass} passing`);
+}
+if (fail > 0) {
+  console.log(`${indent}${red}${fail} failing`);
+}
+console.log('');
+
+// exit code
+process.exit(fail > 0 ? 1 : 0);
